@@ -38,8 +38,7 @@ public class Numerator{
         adivinanza=scanner.nextInt();
         }
         if(intento==5&&adivinanza!=numero){
-            System.out.println("Perdio");
-        //GameOver
+            GameOver();1
         }else{
             fin();
         }
@@ -58,5 +57,23 @@ public static void fin(){
             System.out.println("se acabó el juego");
         }
 scanner.close();
+}
+
+public static void GameOver(){
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Perdiste...");
+    System.out.println("1. Volver a intentar");
+    System.out.println("0. Salir");
+    int decision=scanner.nextInt();
+    while(decision!=1 && decision!=0) {
+            System.out.println("Ingrese un comando valido");
+            decision=scanner.nextInt();
+        }
+    if(decision==1){
+        Juego();
+    }else if(decision==0){
+        System.out.println("Saliendo de Numerator...");
+    }
+    scanner.close();
 }
 }
