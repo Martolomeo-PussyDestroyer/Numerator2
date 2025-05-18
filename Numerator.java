@@ -22,20 +22,33 @@ public class Numerator{
         }
         scanner.close();
     }public static void Juego(){
-Scanner scanner = new Scanner(System.in);
-int numero = (int)(Math.random() * 50);
-int adivinanza = scanner.nextInt();
-while(adivinanza!=numero){
-if(numero<adivinanza){
-System.out.println("Muy grande!!!");
-adivinanza= scanner.nextInt();
-}else if(numero>adivinanza){
-System.out.println("Muy poquito!!!!");
-adivinanza= scanner.nextInt();
+        Scanner scanner = new Scanner(System.in);
+        int numero = (int)(Math.random() * 50);
+        int adivinanza = scanner.nextInt();
+        while(adivinanza!=numero){
+        if(numero<adivinanza){
+        System.out.println("Muy grande!!!");
+        adivinanza= scanner.nextInt();
+        }else if(numero>adivinanza){
+        System.out.println("Muy poquito!!!!");
+        adivinanza= scanner.nextInt();
+        }
 }
-}
-//fin();
+fin();
 scanner.close();
 }
 
+public static void fin(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("FELICIDADES, HAS GANADO!!!");
+        System.out.println("dele al 1 para volver a jugar");
+        System.err.println("dele al 0 para salir");
+        int FinalEleccion= scanner.nextInt();
+        if(FinalEleccion==1){
+            Juego();
+        }else if(FinalEleccion==0){
+            System.out.println("se acabó el juego");
+        }
+scanner.close();
+}
 }
