@@ -16,27 +16,35 @@ public class Numerator{
             inicio=scanner.nextInt();
         }
         if(inicio==1){
-            Juego();        
+            Juego();
         }else if(inicio==0){
             System.out.println("Saliendo de Numerator...");
         }
         scanner.close();
-    }public static void Juego(){
+    }
+    public static void Juego(){
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Adivine el numero entre 0 y 50");
         int numero = (int)(Math.random() * 50);
         int adivinanza = scanner.nextInt();
-        while(adivinanza!=numero){
+        int intento=1;
+        while(adivinanza!=numero&&intento!=5){
         if(numero<adivinanza){
-        System.out.println("Muy grande!!!");
-        adivinanza= scanner.nextInt();
+            System.out.println("Muy grande!!!");
         }else if(numero>adivinanza){
-        System.out.println("Muy poquito!!!!");
-        adivinanza= scanner.nextInt();
+            System.out.println("Muy poquito!!!!");
         }
-}
-fin();
-scanner.close();
-}
+        intento++;
+        adivinanza=scanner.nextInt();
+        }
+        if(intento==5&&adivinanza!=numero){
+            System.out.println("Perdio");
+        //GameOver
+        }else{
+            fin();
+        }
+        scanner.close();
+        }
 
 public static void fin(){
         Scanner scanner = new Scanner(System.in);
